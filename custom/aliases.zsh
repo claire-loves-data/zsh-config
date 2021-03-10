@@ -14,6 +14,7 @@ alias copypath=copy_path_to_clipboard
 alias bashprofile="vi ~/.bash_profile"
 alias terminal="open -a Terminal "`pwd`""
 alias ff="grep -rnw --exclude-dir={node_modules,dist,.git} . -e $1"
+alias ll="ls -l"
 
 bookmark_with_cd_args() {
   name=$1
@@ -47,7 +48,7 @@ alias submodulepull="git submodule foreach git pull --ff-only"
 # github
 open_on_github() {
   app="$(basename `pwd`)"
-  user=${1:-"rouanw"}
+  user=${1:-"clairelovesdata"}
   open https://github.com/${user}/${app}
 }
 alias gh_open=open_on_github $1
@@ -110,5 +111,3 @@ alias poemoftheday="rsstail -u http://feeds.poetryfoundation.org/PoetryFoundatio
 "
 alias poemsnippet="rsstail -u http://feeds.poetryfoundation.org/PoetryFoundation/PoemOfTheDayText -1 -d -n 1 -N | html2text -utf8 | head -5 | tail +2"
 
-# personal
-alias finances="cd ~/projects/finances && open http://localhost:8000/finances.html && simpleserver"
